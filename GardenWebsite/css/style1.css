@@ -1,0 +1,25 @@
+h1{
+	font-weight: 900;
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+	font-size: 250%; 
+	color: #000000;
+	text-align: center;
+}
+h2{
+	color: #000000;
+	text-align: center;
+	font-family: Lucida Sans Unicode, Lucida Grande, sans-serif;
+	font-size: 200%;
+	font-weight: 900;
+}
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  opacity: 0.6;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox p {
+  margin: 5%;
+	color: #000000;
+}

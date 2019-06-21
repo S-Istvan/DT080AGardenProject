@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About</title>
+        <link rel="icon" type="image/png" href="images/logoIcon.ico">
+        <link rel="stylesheet" type="text/css" href="css/stylesheet.css">     
+    </head>
+    <body id="aboutBody" style="background-color:#48494f">
+       <div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeChartNav()">&times;</a>
+                <a href="index.php">Home</a>
+                <a href="homepage.php">Select Data</a>
+                <a href="activate.php">Activate Devices</a>
+                <a href="climateControl.php">Climate Control</a>
+                <a href="cameraControl.php">Camera Control</a>
+                <a href="about.html">About</a>
+            </div>
+            <div id="main" style="margin-left:10%;">
+                <span style="font-size:3vw;cursor:pointer; color:white;" onclick="openChartNav()">&#9776;</span>
+            </div>
+            <nav class="navBar">
+                    <ul class="navList" style="color:white">
+                        <li class="listItem"></li>
+                        <li class="listItem"></li>
+                        <li class="listItem"></li>
+                        <li class="listItem"></li>
+                    </ul> 
+            </nav>
+            <div class="splitDiv" id="topDiv"> <h1 id="aboutTitle"></h1> </div>
+            <div class="splitDiv" id="midLeftDiv"> <img class="animPics" id="randomPic" src="images/temp.png" alt="randomPic"></div>
+            <div class="splitDiv" id="midMidDiv"><h2 id="groupInfoHead">Group Members:<br></h2><p id="groupInfo">Samuel Sheedy<br>Stephaine Ryan Istvan<br>Claire Browne</p><h3 id="courseInfo">DT080A/3 Networking Technologies</h3> </div>
+            <div class="splitDiv" id="midRightDiv"><img class="animPics" src="images/armeg.jpg" alt="gnome"></div>
+            <div class="splitDiv" id="botDiv">
+                <div id="botDiv1"> </div>
+                <div id="botDiv2"> </div>
+                <div id="botDiv3"> </div>
+                <div id="botDiv4"> </div>
+                <div id="botDiv5"> </div>
+                <div id="botDiv6"> </div>
+            </div>
+       </div> 
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/TweenMax.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/CSSPlugin.min.js"></script>
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.2/plugins/TextPlugin.min.js"></script>     
+       <script type="text/javascript" src="js/anim.js"></script>
+       <script type="text/javascript" src="js/js.js"></script>           
+    </body>
+</html>

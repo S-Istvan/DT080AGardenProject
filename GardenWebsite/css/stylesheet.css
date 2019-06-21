@@ -1,0 +1,1086 @@
+body
+{
+    font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    font-size: 1vw;
+}
+#homeBody
+{ 
+    background-image: url('../images/vines.png'),url('../images/vines3Bak.png'),url('../images/vines4.png'); 
+    background-color: white; 
+    background-size: 50% auto;
+}
+#backImg
+{
+    background-image: url('../images/vinesShadow.png'),url('../images/vines4Shadow.png'),url('../images/vines3Shadow.png'); 
+    background-color: rgba(0, 0, 0, 0.00);   
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top:0;
+    left:0;
+    background-size: 50% auto;
+    filter: opacity(0%);
+}
+#fadeDiv
+{
+    background-color: rgba(0, 0, 0, 0.98);   
+    animation-name: fadeIntro;
+    animation-duration: 5s;
+    animation-timing-function: ease-out;
+    -moz-animation-name: fadeIntro;
+    -moz-animation-duration: 5s;
+    background-blend-mode: overlay, soft-light;
+    filter: opacity(98%);
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -2;
+    top:0;
+    left:0;
+}
+@keyframes fadeIntro 
+{
+    from {filter: opacity(0%);}
+    to {filter: opacity(98%);}
+}
+@-moz-keyframes fadeIntro 
+{
+    from {filter: opacity(0%);}
+    to {filter: opacity(98%);}
+}
+
+.ui-datepicker 
+{
+    filter:invert(100%);
+}
+#banner
+{
+    width: 100%;
+    left:0%;
+    background-color:rgba(255,255,255,0.4);
+}
+#flowerImg
+{
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    position:fixed;
+    width: 10%;
+    bottom: 70%;
+    right: 45%;
+    left:45%;
+    margin:0 auto;
+    animation-name: risingSun;
+    animation-duration: 5s;
+    filter: drop-shadow(0px 0px 30px black) invert(100%) opacity(75%);
+    transition: filter 2s;
+}
+#sunImg
+{
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    position:fixed;
+    width: 33%;
+    bottom: 70%;
+    right: 33%;
+    left:33%;
+    margin:0 auto;
+    animation-name: risingSun;
+    animation-duration: 5s;
+    filter: drop-shadow(0px 0px 30px black) invert(100%) opacity(75%);
+    transition: filter 2s;
+}
+@keyframes risingSun
+{
+    0% 
+    {
+        transform: scale(.5);
+    }
+    100% 
+    {
+        transform: scale(1);
+    }
+}
+#sunImg:hover
+{
+    filter: drop-shadow(0px 0px 4px #FFF) invert(0%) opacity(75%);
+}
+#sunImg:hover ~ #backImg
+{
+    animation-name: unfadeVine;
+    animation-duration: 8s;
+    animation-timing-function: ease-in-out;
+}
+@keyframes unfadeVine
+{
+    0% {filter: opacity(0%);}
+    50% {filter: opacity(100%);}
+    100%{filter: opacity(0%);}
+}
+#flowerImg:hover
+{
+    filter: drop-shadow(0px 0px 4px #FFF) invert(0%) opacity(75%);
+}
+.calendar
+{
+    width: 25%;
+    padding-right: 5%;
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-bottom:1%;
+    border: #363131 solid 1px;
+    border-radius:25px;
+    margin: auto;
+}
+@keyframes fadeDiv
+{
+    from {background: rgb(0, 0, 0);}
+    to {background: linear-gradient(rgba(255, 255, 255, 0.00), black);}
+}
+#calLeft
+{
+    background: linear-gradient(192deg,rgba(255, 255, 255, 0.30), black);
+    background-size: 120% 120%;
+    background-position:0% 31%;
+    animation:fadeDivLeft;
+    animation-duration: 15s;
+     
+}
+@keyframes fadeDivLeft
+{
+    0%{background-position:0% 31%}
+    50%{background-position:100% 70%}
+    100%{background-position:0% 31%}
+} 
+#calCenter1
+{
+    background: linear-gradient(rgba(255, 255, 255, 0.30), black);
+    background-size: 130% 150%; 
+   /* animation-name:fadeDivCenter;
+    animation-duration: 15s; */
+} 
+#calCenter2
+{
+    background: linear-gradient(rgba(255, 255, 255, 0.30), black); 
+    background-size: 140% 150%;
+    /*animation-name:fadeDivCenter;
+    animation-duration: 15s;*/
+}
+@keyframes fadeDivCenter
+{
+    0%{background-position:51% 0%}
+    50%{background-position:50% 60%}
+    100%{background-position:51% 50%}
+} 
+#calRight
+{
+    background: linear-gradient(160deg,rgba(255, 255, 255, 0.30), black);
+    background-size: 120% 120%;
+    background-position:0% 31%;
+    animation-name:fadeDivRight;
+    animation-duration: 15s;
+}  
+@keyframes fadeDivRight
+{
+    0%{background-position:0% 31%}
+    50%{background-position:100% 70%}
+    100%{background-position:0% 31%}
+} 
+#calContainer
+{
+    display: -webkit-flex;
+    display: flex;
+    width:100%;
+    border-radius:25px;
+    position:fixed;
+    top:31%;
+    left:0%;
+}
+.selectButton
+{
+    border-color: #FFD700;
+    border-style: ridge;
+    width: 100%;
+    color: black;
+    background-color: rgb(255, 255, 255);
+    box-shadow: inset 0px 0px 5px #A0A0A0;
+    text-align: center;
+    padding: 5px;
+    margin-top: 5%;
+    cursor:pointer;
+    transition: color 50ms, transform 100ms, box-shadow 100ms, border-radius 2s;
+}
+.selectButton:hover
+{
+    border-radius: 35px;    
+    background: linear-gradient(to right,royalblue, #663399);
+    background-position: 0px;
+    color:white;
+}
+.selectButton:active
+{
+    border-radius: 10px;    
+    background: linear-gradient(to right,#663399, royalblue);
+    background-position: 0px;
+    color:white;
+    box-shadow: inset 0px 0px 20px #A0A0A0;
+    transform: translateY(1px);
+}
+.calBox
+{
+    width:100%;
+    text-align:center;
+    border-radius: 8px;
+    cursor:pointer;
+}
+
+.errorText
+{
+    visibility: hidden;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid white;
+    color:#fff;
+    background-color:#636870;
+}
+.icon
+{
+    width:50%;
+    margin-left:25%;
+    margin-right:25%;
+    border:0;
+}
+#spriteflower
+{
+    position:fixed;
+    padding:0;
+    margin:0;
+    width:20%;
+    bottom:-1%;
+    right:40%;
+    left:40%;
+    filter: drop-shadow(0px 0px 10px black) invert(100%) opacity(50%);
+    transition: filter 2s;
+}
+#spriteflower:hover
+{
+    filter:drop-shadow(0px 0px 40px black) invert(100%) opacity(60%);
+}
+.navBar
+{
+    background-image: url('../images/vines2.png');
+    background-size: 100% auto;
+    background-color:#2D2A2A;
+    width:10%;
+    height: 100%;
+    left:0;
+    top:0;
+    position:fixed;
+    border: 1px solid black;
+}
+.navList
+{
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    height:100%;
+}
+.listItem
+{
+    background-color:#595959;
+    text-align: center;
+    width:100%;
+    height:25%;
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+}
+.navList a
+{
+    text-decoration: none;
+    color: white;
+}
+.listItem:hover
+{
+    background-color: purple;
+    color: white;
+}
+#chart
+{
+    padding-left:3px;
+    top:0;
+    left:10%;
+    width:100%;
+    height:100%;
+    position:fixed;
+}
+#curveChart
+{
+    top:0;
+}
+#dispValues:hover
+{
+    background-color: purple;
+    color: white;
+}
+.splitDiv
+{
+    width:0%; 
+    height:0%; 
+    position: fixed;
+    opacity: 1;
+}
+#topDiv
+{
+    z-index: -2;
+    left:10%;
+    top:0%;
+    background-color: #363737;
+    border: 1px solid #000;
+}
+#midLeftDiv
+{
+    left:10%;
+    top:25%;
+    background-color: #595959;
+    border: 1px solid #000;
+}
+#midMidDiv
+{
+    left:40%;
+    top:25%;
+    background-color: #595959;
+    border: 1px solid #000;
+}
+#midRightDiv
+{
+    left:70%;
+    top:25%;
+    background-color: #595959;
+    border: 1px solid #000;
+}
+#botDiv
+{
+    left:10%;
+    top:75%;
+    background-color: #595959;
+    border: 1px solid #000;
+    background-size: auto 100%;
+    padding:0;
+}
+#botDiv1
+{
+    width:15%;
+    text-align: center;
+    height:100%;
+    position: fixed;
+    left:10%;
+    display: inline-block;
+    padding:0;
+    top: 125%;
+    border-right: 1px solid black;
+    margin:0;
+}
+#botDiv2
+{   
+    padding:0;
+    margin:0;
+    text-align: center;   
+    width:15%;
+    position: fixed;
+    left:25%;
+    height:100%;
+    top: 125%;
+    border-right: 1px solid black;    
+    display: inline-block;
+}
+#botDiv3
+{
+    padding:0;
+    margin:0;
+    text-align: center;
+    width:15%;
+    position: fixed;
+    left:40%;
+    height:100%;
+    top: 125%;
+    border-right: 1px solid black;    
+    display: inline-block;
+}
+#botDiv4
+{
+    padding:0;
+    margin:0;
+    text-align: center;
+    width:15%;
+    position: fixed;
+    left:55%;
+    height:100%;
+    top: 125%;
+    border-right: 1px solid black;    
+    display: inline-block;
+}
+#botDiv5
+{
+    padding:0;
+    margin:0;
+    text-align: center;
+    width:15%;
+    position: fixed;
+    left:70%;
+    height:100%;
+    top: 125%;
+    border-right: 1px solid black;    
+    display: inline-block;
+}
+#botDiv6
+{
+    padding:0;
+    margin:0;
+    text-align: center;
+    width:15%;
+    position: fixed;
+    left:85%;
+    height:100%;
+    top: 125%;
+    border-right: 1px solid black;    
+    display: inline-block;
+}
+.animPics
+{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+#aboutTitle
+{
+    color: #fff;
+    font-size: 5vw;
+    text-align: center;
+    opacity: 0;
+    transform:rotateY(180deg);
+}
+#groupInfoHead
+{
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+}
+#groupInfo
+{
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+}
+#courseInfo
+{
+    color: #fff;
+    text-align: center;
+    opacity: 0;
+}
+#randomPic
+{
+    opacity:1;
+}
+.sidenav 
+{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a 
+{
+    padding: 8px 8px 8px 10px;
+    text-decoration: none;
+    font-size: 2vw;
+    color: #cccccc;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover 
+{
+    color: #f1f1f1;
+}
+
+.sidenav .closebtn 
+{
+    position: absolute;
+    top: 0;
+    right: 10%;
+    font-size: 2vw;
+    margin-left: 0;
+}
+
+#main 
+{
+    transition: margin-left .5s;
+    z-index: 2;
+}
+#buttonContainer
+{
+    height:30%;
+    width:80%;
+    left:10%;
+    top:31%;
+    position:fixed;
+    display:flex;
+}
+.buttonSplit
+{
+    text-align: center;
+    width:32%;
+    margin:1%;
+    background-color: rgba(54, 55, 55, 0.32);
+    padding-top:3%;
+
+}
+.actButton
+{
+    width:80%;
+    height:50%;
+    color:white;
+    background: linear-gradient(to right,royalblue, #663399);
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1vw;
+}
+.actButton:hover
+{ 
+    background: linear-gradient(to left,royalblue, #663399);
+}
+.actTextOut
+{
+    visibility: hidden;
+    color:white;
+}
+.leftItem
+{
+    text-align: center;
+    width:100%;
+    height:25%;
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+}
+.rightItem
+{
+    text-align: center;
+    width:100%;
+    height:25%;
+    display: flex;
+    justify-content:center;
+    align-content:center;
+    flex-direction:column;
+}
+.rightBar
+{
+    background-image: url('../images/vines2.png');
+    background-size: 100% auto;
+    background-color:#2D2A2A;
+    width:10%;
+    height: 100%;
+    right:0;
+    top:0;
+    position:fixed;
+    border: 1px solid black;
+}
+#backImgAct
+{
+    background-image: url('../images/vines.png'),url('../images/vines3Bak.png'),url('../images/vines4.png');
+    background-color: rgba(0, 0, 0, 0.00);   
+    background-size: cover;
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top:0%;
+    left:10%;
+    background-size: 25% auto;
+    background-blend-mode: overlay, soft-light;
+}
+#backImgActAnim
+{
+    background-image: url('../images/rainAnim.gif');
+    background-color: rgba(0, 0, 0, 0.00);   
+    background-size: cover;
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top:0%;
+    left:10%;
+    background-size: 25% auto;
+    opacity:0;
+    visibility: hidden;
+    transition: opacity 4s;
+}
+#backImgActShadow
+{
+    background-image: url('../images/vinesShadow.png'),url('../images/vines4Shadow.png'),url('../images/vines3Shadow.png'); 
+    background-color: rgba(0, 0, 0, 0.00);   
+    background-size: cover;
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top:0;
+    left:10%;
+    background-size: 25% auto;
+    filter: opacity(0%);
+}
+@keyframes unfadeShadow
+{
+    0% {filter: opacity(0%);}
+    50% {filter: opacity(50%);}
+    100%{filter: opacity(0%);}
+}
+#backImgActDarken
+{
+    background-image: url('../images/vinesShadow.png'),url('../images/vines4Shadow.png'),url('../images/vines3Shadow.png'); 
+    background-color: rgb(0, 0, 0);   
+    background-size: cover;
+    width: 80%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top:0;
+    left:10%;
+    background-size: 25% auto;
+    filter: opacity(0%);
+    background-blend-mode: darken;   
+}
+@keyframes unfadeDarken
+{
+    0% {filter: opacity(0%);}
+    50% {filter: opacity(75%);}
+    100%{filter: opacity(0%);}
+}
+#iconContainer
+{
+    height:30%;
+    width:80%;
+    left:10%;
+    top:58%;
+    position:fixed;
+    display:flex;
+}
+#camIconContainer
+{
+	height:10%;
+    width:40%;
+    left:35%;
+    top:90%;
+    position:fixed;
+    display:flex;
+}
+#cameraDiv
+{
+	position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    width: 80%;
+    left:10%;
+    overflow: hidden;
+}
+#camFrame
+{
+	position: absolute;
+    top:-5%;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    object-fit: contain;
+}
+.iconSplit
+{
+    text-align: center;
+    width:32%;
+    margin:1%;
+    background-color: rgba(54, 55, 55, 0.32);
+}
+.camIconSplit
+{
+	text-align: center;
+    width:32%;
+    margin:1%;
+}
+#actLightIcon
+{
+    transition: filter 2s;
+}
+#deactLightIcon
+{
+    transition: filter 2s;
+}
+#actPumpIcon
+{
+    transition: filter 2s;
+}
+#camUpIcon
+{
+    transition: filter 2s;
+}
+#camDownIcon
+{
+    transition: filter 2s;
+}
+.rangeSlider
+{
+    -webkit-appearance: none; 
+    cursor: pointer;
+    width: 80%;
+    height: 10%;
+    background: rgba(254, 254, 255, 0.247);
+    outline: none;
+}
+.rangeSlider::-webkit-slider-thumb 
+{
+    -webkit-appearance: none;
+    width: 1vw;
+    height: 1vw;
+    border-radius: 10%; 
+    background: rgb(7, 231, 213);
+    opacity: .6;
+    cursor: pointer;
+}
+#maxTempSlideText
+{
+    color: cyan;
+    font-size: 2vw;
+}
+#minTempSlideText
+{
+    color: cyan;
+    font-size: 2vw;
+}
+
+#login {
+    position: fixed;
+    width: 30%;
+    left: 35%;
+    right: 35%;
+    top: 15%;
+  }
+  
+  #login form {
+    margin: auto;
+    padding: 22px 22px 22px 22px;
+    width: 100%;
+    border-radius: 5px;
+    background: #282e33;
+    border-top: 3px solid #434a52;
+    border-bottom: 3px solid #434a52;
+    
+  }
+  
+  #login form span {
+    background-color: #363b41;
+    border-radius: 3px 0px 0px 3px;
+    border-right: 3px solid #434a52;
+    color: #606468;
+    display: block;
+    float: left;
+    line-height: 50px;
+    text-align: center;
+    width: 90%;
+    height: 20%;
+  }
+  
+  #login form input[type="text"] {
+    background-color: #3b4148;
+    border-radius: 0px 3px 3px 0px;
+    color: #a9a9a9;
+    margin-bottom: 1em;
+    padding: 0 16px;
+    width: 90%;
+    height: 20%;
+    font-size: 1vw;
+  }
+  
+  #login form input[type="password"] {
+    background-color: #3b4148;
+    border-radius: 0px 3px 3px 0px;
+    color: #a9a9a9;
+    margin-bottom: 1em;
+    padding: 0 16px;
+    width: 90%;
+    height: 20%;
+    font-size: 1vw;
+  }
+  
+  #login form input[type="submit"] {
+    background: linear-gradient(to right,royalblue, #663399);
+    border: 0;
+    width: 100%;
+    height: 40px;
+    border-radius: 3px;
+    color: white;
+    cursor: pointer;
+    transition: color 50ms, transform 100ms, box-shadow 100ms, border-radius 2s;
+    font-size: 2vw;
+  }
+  #login form input[type="submit"]:hover {
+    border-radius: 35px;    
+    background: linear-gradient(to right, #663399,royalblue);
+    background-position: 0px;
+    color:white;
+  }
+  
+  #loginButton input[type=submit] {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size:0.875em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position:absolute;
+    right: 10%;
+    width:8%;
+    font-size: 2vw;
+  }
+  
+  #loginButton input[type=submit]:hover {background-color: #3e8e41}
+  
+  #loginButton input[type=submit]:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  
+  #logoutButton input[type=submit] {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size:0.875em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position:absolute;
+    top: 49%;
+    right: 0.5%;
+    width:8%
+  }
+  
+  #logoutButton input[type=submit]:hover {background-color: #3e8e41}
+  
+  #logoutButton input[type=submit]:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  
+  #registerButton input[type=submit] {
+    display: inline-block;
+    padding: 5px 15px;
+    font-size:0.875em;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    position:absolute;
+    right: 0.5%;
+    width:8%
+  }
+  
+  #registerButton input[type=submit]:hover {
+      background-color: #3e8e41
+    }
+  
+  #registerButton input[type=submit]:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+  
+  .regButton {
+      background: linear-gradient(to right,royalblue, #663399);
+      border: 0;
+      width: 100%;
+      height: 40px;
+      border-radius: 3px;
+      color: white;
+      cursor: pointer;
+      transition: color 50ms, transform 100ms, box-shadow 100ms, border-radius 2s;
+      
+  }
+  
+  .regButton:hover {
+    border-radius: 35px;    
+    background: linear-gradient(to right, #663399,royalblue);
+    background-position: 0px;
+    color:white;
+  }
+  
+
+
+@media only screen and (max-width: 500px) {
+
+    body 
+    { 
+        font-size: 3vw;
+    }
+    #calContainer
+    {
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        border-radius:25px;
+        position:static;
+    }
+    .calendar
+    {
+        float:left;
+        width: 90%;
+        height:50%;
+        padding-right: 5%;
+        padding-left: 5%;
+        padding-top: 1%;
+        padding-bottom:1%;
+        border: #363131 solid 1px;
+        border-radius:25px;
+        margin: auto;
+        background: rgba(0,0,0,0.2);
+    }
+    .sidenav {
+        width: 0%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top:0px;
+    }
+    
+    .sidenav a {
+        text-align: center;
+        text-decoration: none;
+        font-size: 2vw;
+        color: #cccccc;
+        display: block;
+        transition: 0.3s;
+        display: inline-block;
+        margin:auto;
+    }
+    
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+    
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 10%;
+        font-size: 2vw;
+        margin-left: 0;
+    }
+    
+    #main {
+        transition: margin-left .5s;
+        z-index: 2;
+    }
+    #banner
+    {
+        visibility: hidden;
+    }
+    #spriteright
+    {
+        visibility: hidden;
+    }
+    #spriteflower
+    {
+        visibility: hidden;
+    }
+    #homeBody
+    { 
+        background-color: black; 
+    }
+    #backImg
+    {
+        visibility: hidden;
+    }
+    #fadeDiv
+    {
+        visibility: hidden;
+    }
+    div.ui-datepicker
+    {
+        font-size:10px;
+    }
+    #iconContainer
+    {
+        visibility: hidden;
+    }
+    .iconSplit
+    {
+        visibility: hidden;
+    }
+    #sunImg
+    {
+        visibility: hidden;
+    }
+    #buttonContainer
+    {
+        height:30%;
+        width:100%;
+        left:10%;
+        top:10%;
+        display:flex;
+        flex-direction: column;
+        position:static;
+    }
+    .buttonSplit
+    {
+        text-align: center;
+        width:100%;
+        margin:1%;
+        background-color: rgba(54, 55, 55, 0.32);
+        padding-top:3%;    
+    }
+    #servoUpButton
+    {
+        margin:auto;
+    }
+    #servoDownButton
+    {
+        margin:auto;
+    }
+    #flowerImg
+    {
+        visibility: hidden;
+    }
+}
